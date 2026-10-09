@@ -65,8 +65,8 @@ document.querySelectorAll('.video[data-yt]').forEach(function (box) {
     var ink = css('--ink'), tell = css('--tell'), blue = css('--blue');
     ctx.clearRect(0, 0, W, H);
     /* sight range */
-    ctx.setLineDash([6, 6]); ctx.strokeStyle = css('--grid'); ctx.lineWidth = 1.5;
-    ctx.beginPath(); ctx.arc(e.x, e.y, SIGHT, 0, 7); ctx.stroke(); ctx.setLineDash([]);
+    ctx.setLineDash([6, 6]); ctx.strokeStyle = ink; ctx.globalAlpha = 0.3; ctx.lineWidth = 1.5;
+    ctx.beginPath(); ctx.arc(e.x, e.y, SIGHT, 0, 7); ctx.stroke(); ctx.setLineDash([]); ctx.globalAlpha = 1;
     /* telegraph: a cone that fills as the hit gets closer */
     if (e.state === 'windup' || e.state === 'strike') {
       var p = e.state === 'windup' ? e.t / WIND : 1;
