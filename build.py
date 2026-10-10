@@ -122,11 +122,9 @@ ABOUT = [
  "My strengths are organizing and communicating large reference libraries for design teams, and combining that research with my design experience to solve problems.",
 ]
 SERVICES = [
- ("Gameplay and combat design", "Enemy AI, bosses, NPCs, weapons and encounter flow."),
  ("Talks on preparing for the industry", "What studios look for and how to get ready."),
  ("Design workshops and combat deep-dives", "Hands-on sessions for teams and students."),
- ("Career and portfolio mentorship", "Mentoring at Gameheads and to interns at Electronic Arts."),
- ("Reference libraries", "Organizing research so a whole team can use it."),
+ ("Career and portfolio mentorship", "Mentoring at Gameheads, and to interns at Electronic Arts."),
 ]
 
 def e(s): return html.escape(s, quote=True)
@@ -158,7 +156,7 @@ def head(title, desc, depth, path):
 <a class="skip" href="#main">Skip to content</a>
 <header class="top"><div class="wrap bar">
 <a class="mark" href="{p}index.html"><span class="pips" aria-hidden="true"><i></i><i></i><i></i></span>{NAME}</a>
-<nav aria-label="Main"><a href="{p}index.html#work">Work</a><a href="{p}about.html">About</a><a href="{p}about.html#contact">Contact</a></nav>
+<nav aria-label="Main"><a href="{p}index.html#work">Work</a><a href="{p}about.html">About</a></nav>
 </div></header>
 """
 
@@ -236,24 +234,6 @@ def index():
 <ul class="table"><li class="thead" aria-hidden="true"><span></span><span>Project</span><span>Role</span><span>What I did</span></li>{oh}</ul>
 </section>
 
-<section class="wrap how" id="how">
-<h2>How I work</h2>
-<ol class="steps">
-<li class="step"><h3 class="c-blue">Reference</h3><p>I\u2019ve played over 1,300 games and keep a library of combat references. When a problem comes up, I already know what\u2019s been tried and what\u2019s worth borrowing.</p></li>
-<li class="step"><h3 class="c-yellow">Translate</h3><p>I boil that research down for animators, engineers, producers and artists, in terms each of them can use, so the whole team works from the same picture.</p></li>
-<li class="step"><h3 class="c-red">Build</h3><p>I implement and iterate on it myself, owning the enemy systems end to end and building them from the ground up, from prototype to ship.</p></li>
-</ol>
-</section>
-
-<section class="wrap lib" id="library">
-<h2>Reference library</h2>
-<p class="lede">The research behind the work, kept in public.</p>
-<ul class="liblist">
-<li><a class="libcard" href="{EDB}" rel="noopener"><span class="rtab c-blue">Database</span><span class="rtitle">Enemy Design Database</span><span class="rblurb">A searchable catalog of enemy designs, mainly from action-adventure games: enemy type, size, weapons, actions, reactions and video references. I built it and maintain it.</span></a></li>
-<li><a class="libcard" href="https://www.youtube.com/@tringuyen-combatdesign" rel="noopener"><span class="rtab c-yellow">Video</span><span class="rtitle">Combat animation references</span><span class="rblurb">A YouTube reference library of combat animation, organized for combat design.</span></a></li>
-<li><a class="libcard" href="https://trigrows.medium.com/solving-the-combat-puzzle-of-clawface-661e887d40c0" rel="noopener"><span class="rtab c-red">Write-up</span><span class="rtitle">Solving the combat puzzle of Clawface</span><span class="rblurb">How the weapons, enemies and levels of Clawface came together, and what small tuning changes did to the player experience.</span></a></li>
-</ul>
-</section>
 </main>
 """ + foot(0)
 
@@ -295,13 +275,36 @@ def about():
 <h1>About</h1>
 <div class="aboutgrid">
 <div class="photo"><img src="assets/tri.jpg" alt="Portrait of {NAME}" width="480" height="600" onerror="this.parentNode.hidden=true;this.closest('.aboutgrid').classList.add('nophoto')"></div>
-<div class="aboutcol">
 <div class="bio">{''.join(f'<p>{e(t)}</p>' for t in ABOUT)}</div>
+</div>
+
+<section id="how">
+<h2>How I work</h2>
+<ol class="steps">
+<li class="step s-blue"><h3>Reference</h3><p>I\u2019ve played over 1,300 games and keep a library of combat references. When a problem comes up, I already know what\u2019s been tried and what\u2019s worth borrowing.</p></li>
+<li class="step s-yellow"><h3>Translate</h3><p>I boil that research down for animators, engineers, producers and artists, in terms each of them can use, so the whole team works from the same picture.</p></li>
+<li class="step s-red"><h3>Build</h3><p>I implement and iterate on it myself, owning the enemy systems end to end and building them from the ground up, from prototype to ship.</p></li>
+</ol>
+</section>
+
+<section id="library">
+<h2>Reference library</h2>
+<ul class="table">
+<li><a class="trow" href="{EDB}" rel="noopener"><span class="pip c-blue" aria-hidden="true"></span><span class="otitle">Enemy Design Database</span><span class="ometa">Database</span><span class="oblurb">A searchable catalog of enemy designs, mainly from action-adventure games: type, size, weapons, actions, reactions and video references. I built it and maintain it.</span></a></li>
+<li><a class="trow" href="https://www.youtube.com/@tringuyen-combatdesign" rel="noopener"><span class="pip c-yellow" aria-hidden="true"></span><span class="otitle">Combat animation references</span><span class="ometa">YouTube</span><span class="oblurb">A reference library of combat animation, organized for combat design.</span></a></li>
+<li><a class="trow" href="https://trigrows.medium.com/solving-the-combat-puzzle-of-clawface-661e887d40c0" rel="noopener"><span class="pip c-red" aria-hidden="true"></span><span class="otitle">Solving the combat puzzle of Clawface</span><span class="ometa">Write-up</span><span class="oblurb">How the weapons, enemies and levels of Clawface came together, and what small tuning changes did to the player experience.</span></a></li>
+</ul>
+</section>
+
+<section id="offer">
 <h2>What I offer</h2>
 <ul class="table services">{sv}</ul>
-<h2 id="contact">Contact</h2>
-<ul class="contact c-blue">{mail}<li><a href="{LINKEDIN}" rel="noopener">LinkedIn</a></li><li><a href="{EDB}" rel="noopener">Enemy Design Database</a>, a reference library of enemy designs I maintain.</li></ul>
-</div></div>
+</section>
+
+<section id="contact">
+<h2>Contact</h2>
+<ul class="contact c-blue">{mail}<li><a href="{LINKEDIN}" rel="noopener">LinkedIn</a></li></ul>
+</section>
 </main>
 """ + foot(0)
 
