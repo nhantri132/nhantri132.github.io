@@ -4,7 +4,7 @@ GitHub Pages serves the generated .html files directly; Python is only needed on
 import html, os
 
 NAME = "Tri Nguyen"
-EMAIL = ""  # e.g. "you@example.com". Leave empty to hide the email link.
+EMAIL="nhantri132@gmail.com"
 LINKEDIN = "https://www.linkedin.com/in/tri-game-design/"
 EDB = "https://nhantri132.github.io/enemy-design-database/"
 SITE_DESC = "Tri Nguyen is a gameplay designer focused on combat, enemy AI and NPCs. Credits include Star Wars Jedi: Survivor and Marvel's Wolverine."
@@ -118,13 +118,13 @@ PROJECTS = [
 ]
 
 ABOUT = [
- "I’m a gameplay designer with almost a decade of design experience across a wide range of titles. I want to make games that are viscerally entertaining and emotionally meaningful.",
- "My strengths are organizing and communicating large reference libraries for design teams, and combining that research with my design experience to solve problems.",
+ "I\u2019m a gameplay designer with almost a decade of design experience across a wide range of titles. I specialize in combat design, particularly enemy AI design. My goal is to create enemies that make the world feel real, encourage the use of the entire hero kit, and challenge the player in a viscerally entertaining way.",
+ "I love video games for the way players get lost in worlds and are encouraged to interact with the systems, mechanics, story, and themes in a way that\u2019s richer than any other art form out there. Just some of the games that have captured my heart and imagination are Disco Elysium, Big Walk, Elden Ring, Soma, Rock Band, Outer Wilds, Nioh 2, Doom Eternal, and XCOM 2.",
 ]
 SERVICES = [
- ("Talks on preparing for the industry", "What studios look for and how to get ready."),
- ("Design workshops and combat deep-dives", "Hands-on sessions for teams and students."),
- ("Career and portfolio mentorship", "Mentoring at Gameheads, and to interns at Electronic Arts."),
+ ("Talks on preparing for the industry", "What studios look for and how to get ready. Talks at University of Utah, University of North Texas, University of Houston, and NYU."),
+ ("Design workshops and combat deep-dives", "Hands-on sessions for teams and students. Workshop at University of Utah."),
+ ("Career and portfolio mentorship", "Mentoring at Gameheads, EAE, Gamecraft, Electronic Arts interns, and Coog Interactive."),
 ]
 
 def e(s): return html.escape(s, quote=True)
@@ -193,13 +193,13 @@ def index():
 <main id="main">
 <section class="hero"><div class="wrap herogrid">
 <div class="herotext">
-<h1>I design enemies that read the player and fight back.</h1>
+<h1>Combat design with personality and depth</h1>
 <p class="brandline">Every solution comes with a reference. Enemy cast and systems from prototype to ship.</p>
-<p class="lede">Gameplay designer with almost a decade across combat, enemy AI and NPCs. Credits include Giant Skull, Star Wars Jedi: Survivor and Marvel’s Wolverine.</p>
+<p class="lede">Gameplay designer with almost a decade across combat and enemy AI.</p>
 <p class="cta"><a class="btn" href="#work">See the work</a><a class="btn ghost" href="about.html">About me</a></p>
 </div>
 <figure class="arena" id="demo">
-<p class="note" aria-hidden="true">it shows the hit before it lands<svg viewBox="0 0 60 50" width="60" height="50"><path d="M6 6 C 30 4, 50 18, 46 42" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M36 36 L46 43 L52 31" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></p>
+<p class="note" aria-hidden="true">this is basically what i do every day<svg viewBox="0 0 60 50" width="60" height="50"><path d="M6 6 C 30 4, 50 18, 46 42" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M36 36 L46 43 L52 31" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></p>
 <span class="reg" aria-hidden="true">demo area</span>
 <div class="formhead"><strong>Attack frame data</strong><span class="formnote">Illustrative numbers</span></div>
 <canvas id="fd" width="640" height="320" role="img" aria-label="Training-mode view of a stick figure throwing a punch at a dummy, with hurtboxes, hitbox and pushbox drawn over it."></canvas>
@@ -221,14 +221,13 @@ def index():
 <div class="d"><dt>On block</dt><dd id="d-ob"></dd></div>
 <div class="d"><dt>On hit</dt><dd id="d-oh"></dd></div>
 </dl>
-<p class="cap">Startup is the telegraph. Recovery is the punish window. Playback is slowed down, and the numbers are illustrative, not from a shipped game.</p>
 </figure>
 </div></section>
 
 <section class="wrap work" id="work">
 <h2>Work</h2>
-<ul class="flist">{fh}</ul>
-<h3>Related work</h3>
+<div class="fwrap"><p class="note n-gs" aria-hidden="true">where i’m at now<svg viewBox="0 0 60 50" width="60" height="50"><path d="M6 6 C 30 4, 50 18, 46 42" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M36 36 L46 43 L52 31" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></p><ul class="flist">{fh}</ul></div>
+<h3 class="hnote">Related work<span class="note n-old" aria-hidden="true"><svg viewBox="0 0 60 50" width="60" height="50"><path d="M56 10 C 40 6, 22 14, 8 30" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M8 18 L7 31 L20 33" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>oldies but goodies</span></h3>
 <ul class="rlist">{rh}</ul>
 <h3>Earlier work</h3>
 <ul class="table"><li class="thead" aria-hidden="true"><span></span><span>Project</span><span>Role</span><span>What I did</span></li>{oh}</ul>
@@ -274,16 +273,16 @@ def about():
 <main id="main" class="wrap about">
 <h1>About</h1>
 <div class="aboutgrid">
-<div class="photo"><img src="assets/tri.jpg" alt="Portrait of {NAME}" width="480" height="600" onerror="this.parentNode.hidden=true;this.closest('.aboutgrid').classList.add('nophoto')"></div>
+<div class="photo"><img src="assets/tri.jpg" alt="{NAME} throwing a kick at the camera, in glasses and a pink shirt" width="720" height="1104" onerror="this.parentNode.hidden=true;this.closest('.aboutgrid').classList.add('nophoto')"></div>
 <div class="bio">{''.join(f'<p>{e(t)}</p>' for t in ABOUT)}</div>
 </div>
 
 <section id="how">
 <h2>How I work</h2>
 <ol class="steps">
-<li class="step s-blue"><h3>Reference</h3><p>I\u2019ve played over 1,300 games and keep a library of combat references. When a problem comes up, I already know what\u2019s been tried and what\u2019s worth borrowing.</p></li>
-<li class="step s-yellow"><h3>Translate</h3><p>I boil that research down for animators, engineers, producers and artists, in terms each of them can use, so the whole team works from the same picture.</p></li>
-<li class="step s-red"><h3>Build</h3><p>I implement and iterate on it myself, owning the enemy systems end to end and building them from the ground up, from prototype to ship.</p></li>
+<li class="step s-blue"><h3>Reference</h3><p>I\u2019ve played over 1,300 games, keep a library of references, and am inspired by the best.</p></li>
+<li class="step s-yellow"><h3>Translate</h3><p>I communicate the ideas to all disciplines so the team and I can build in the same direction.</p></li>
+<li class="step s-red"><h3>Build</h3><p>I own the enemy systems end to end and build them from the ground up, from prototype to ship.</p></li>
 </ol>
 </section>
 
@@ -292,7 +291,6 @@ def about():
 <ul class="table">
 <li><a class="trow" href="{EDB}" rel="noopener"><span class="pip c-blue" aria-hidden="true"></span><span class="otitle">Enemy Design Database</span><span class="ometa">Database</span><span class="oblurb">A searchable catalog of enemy designs, mainly from action-adventure games: type, size, weapons, actions, reactions and video references. I built it and maintain it.</span></a></li>
 <li><a class="trow" href="https://www.youtube.com/@tringuyen-combatdesign" rel="noopener"><span class="pip c-yellow" aria-hidden="true"></span><span class="otitle">Combat animation references</span><span class="ometa">YouTube</span><span class="oblurb">A reference library of combat animation, organized for combat design.</span></a></li>
-<li><a class="trow" href="https://trigrows.medium.com/solving-the-combat-puzzle-of-clawface-661e887d40c0" rel="noopener"><span class="pip c-red" aria-hidden="true"></span><span class="otitle">Solving the combat puzzle of Clawface</span><span class="ometa">Write-up</span><span class="oblurb">How the weapons, enemies and levels of Clawface came together, and what small tuning changes did to the player experience.</span></a></li>
 </ul>
 </section>
 
