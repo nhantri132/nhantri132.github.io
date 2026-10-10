@@ -216,3 +216,13 @@ nav a:hover{background:var(--yellow)}
 .hnote{display:inline-block}
 @media (max-width:820px){.n-gs,.n-old{display:none}}
 .aboutgrid{grid-template-columns:minmax(0,.5fr) minmax(0,1.5fr)}.aboutgrid.nophoto{grid-template-columns:minmax(0,1fr)}@media (max-width:820px){.aboutgrid{grid-template-columns:minmax(0,1fr)}.photo{max-width:340px}}
+.brandline{max-width:34rem}
+
+/* about: steps in one box, more notes */
+.steps{background:var(--white);border:var(--bw) solid var(--ink);padding:1.75rem 1.75rem 1.5rem;gap:2.25rem}
+.photo{position:relative}
+.n-me{top:auto;right:auto;bottom:1.5%;left:calc(100% + 1.25rem);align-items:center;transform:rotate(-3deg)}
+.n-me svg{margin-bottom:0;width:48px;height:40px}
+.about h2.hnote{display:inline-block}
+.n-old{font-size:1.4rem}
+@media (max-width:820px){.n-me{display:none}}

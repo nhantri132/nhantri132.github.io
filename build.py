@@ -194,8 +194,7 @@ def index():
 <section class="hero"><div class="wrap herogrid">
 <div class="herotext">
 <h1>Combat design with personality and depth</h1>
-<p class="brandline">Every solution comes with a reference. Enemy cast and systems from prototype to ship.</p>
-<p class="lede">Gameplay designer with almost a decade across combat and enemy AI.</p>
+<p class="brandline">Gameplay designer with almost a decade across combat and enemy AI. Every solution comes with a reference, from prototype to ship.</p>
 <p class="cta"><a class="btn" href="#work">See the work</a><a class="btn ghost" href="about.html">About me</a></p>
 </div>
 <figure class="arena" id="demo">
@@ -273,7 +272,7 @@ def about():
 <main id="main" class="wrap about">
 <h1>About</h1>
 <div class="aboutgrid">
-<div class="photo"><img src="assets/tri.jpg" alt="{NAME} throwing a kick at the camera, in glasses and a pink shirt" width="720" height="1104" onerror="this.parentNode.hidden=true;this.closest('.aboutgrid').classList.add('nophoto')"></div>
+<div class="photo"><p class="note n-me" aria-hidden="true"><svg viewBox="0 0 60 50" width="60" height="50"><path d="M56 10 C 40 6, 22 14, 8 30" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M8 18 L7 31 L20 33" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>that\u2019s me!</p><img src="assets/tri.jpg" alt="{NAME} throwing a kick at the camera, in glasses and a pink shirt" width="720" height="1104" onerror="this.parentNode.hidden=true;this.closest('.aboutgrid').classList.add('nophoto')"></div>
 <div class="bio">{''.join(f'<p>{e(t)}</p>' for t in ABOUT)}</div>
 </div>
 
@@ -287,7 +286,7 @@ def about():
 </section>
 
 <section id="library">
-<h2>Reference library</h2>
+<h2 class="hnote">Reference library<span class="note n-old" aria-hidden="true"><svg viewBox="0 0 60 50" width="60" height="50"><path d="M56 10 C 40 6, 22 14, 8 30" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M8 18 L7 31 L20 33" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>the inside of my brain</span></h2>
 <ul class="table">
 <li><a class="trow" href="{EDB}" rel="noopener"><span class="pip c-blue" aria-hidden="true"></span><span class="otitle">Enemy Design Database</span><span class="ometa">Database</span><span class="oblurb">A searchable catalog of enemy designs, mainly from action-adventure games: type, size, weapons, actions, reactions and video references. I built it and maintain it.</span></a></li>
 <li><a class="trow" href="https://www.youtube.com/@tringuyen-combatdesign" rel="noopener"><span class="pip c-yellow" aria-hidden="true"></span><span class="otitle">Combat animation references</span><span class="ometa">YouTube</span><span class="oblurb">A reference library of combat animation, organized for combat design.</span></a></li>
@@ -295,7 +294,7 @@ def about():
 </section>
 
 <section id="offer">
-<h2>What I offer</h2>
+<h2 class="hnote">What I offer<span class="note n-old" aria-hidden="true"><svg viewBox="0 0 60 50" width="60" height="50"><path d="M56 10 C 40 6, 22 14, 8 30" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M8 18 L7 31 L20 33" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>a professional yapper</span></h2>
 <ul class="table services">{sv}</ul>
 </section>
 
