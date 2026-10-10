@@ -270,9 +270,9 @@ def about():
     mail = f'<li><a href="mailto:{e(EMAIL)}">{e(EMAIL)}</a></li>' if EMAIL else ""
     return head(f"About | {NAME}", SITE_DESC, 0, "about.html") + f"""
 <main id="main" class="wrap about">
-<h1>About</h1>
+<h1 class="hnote">About<span class="note n-old" aria-hidden="true"><svg viewBox="0 0 60 50" width="60" height="50"><path d="M56 10 C 40 6, 22 14, 8 30" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M8 18 L7 31 L20 33" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>that\u2019s me!</span></h1>
 <div class="aboutgrid">
-<div class="photo"><p class="note n-me" aria-hidden="true"><svg viewBox="0 0 60 50" width="60" height="50"><path d="M56 10 C 40 6, 22 14, 8 30" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M8 18 L7 31 L20 33" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>that\u2019s me!</p><img src="assets/tri.jpg" alt="{NAME} throwing a kick at the camera, in glasses and a pink shirt" width="720" height="1104" onerror="this.parentNode.hidden=true;this.closest('.aboutgrid').classList.add('nophoto')"></div>
+<div class="photo"><img src="assets/tri.jpg" alt="{NAME} throwing a kick at the camera, in glasses and a pink shirt" width="720" height="1104" onerror="this.parentNode.hidden=true;this.closest('.aboutgrid').classList.add('nophoto')"></div>
 <div class="bio">{''.join(f'<p>{e(t)}</p>' for t in ABOUT)}</div>
 </div>
 
