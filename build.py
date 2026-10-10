@@ -196,18 +196,34 @@ def index():
 <section class="hero"><div class="wrap herogrid">
 <div class="herotext">
 <h1>I design enemies that read the player and fight back.</h1>
+<p class="brandline">Every solution comes with a reference. Enemy cast and systems from prototype to ship.</p>
 <p class="lede">Gameplay designer with almost a decade across combat, enemy AI and NPCs. Credits include Giant Skull, Star Wars Jedi: Survivor and Marvel’s Wolverine.</p>
 <p class="cta"><a class="btn" href="#work">See the work</a><a class="btn ghost" href="about.html">About me</a></p>
 </div>
-<figure class="arena" aria-label="Interactive demo: a small enemy that patrols, chases, telegraphs and strikes. Move your pointer around it.">
+<figure class="arena" id="demo">
 <p class="note" aria-hidden="true">it shows the hit before it lands<svg viewBox="0 0 60 50" width="60" height="50"><path d="M6 6 C 30 4, 50 18, 46 42" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M36 36 L46 43 L52 31" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></p>
 <span class="reg" aria-hidden="true">demo area</span>
-<div class="formhead"><strong>Enemy behavior demo</strong><span>Player is the blue dot</span></div>
-<canvas id="arena" width="640" height="440"></canvas>
-<ol class="states" id="states" aria-live="off">
-<li data-s="patrol">Patrol</li><li data-s="chase">Chase</li><li data-s="windup">Telegraph</li><li data-s="strike">Strike</li><li data-s="recover">Recover</li>
-</ol>
-<figcaption>Move your pointer. It’s a five-state enemy: it gives you a readable telegraph before every hit, then leaves itself open.</figcaption>
+<div class="formhead"><strong>Attack frame data</strong><span class="formnote">Illustrative numbers</span></div>
+<canvas id="fd" width="640" height="320" role="img" aria-label="Training-mode view of a stick figure throwing a punch at a dummy, with hurtboxes, hitbox and pushbox drawn over it."></canvas>
+<ul class="legend" aria-label="Box colors"><li><i class="k kg"></i>Hurtbox</li><li><i class="k kr"></i>Hitbox</li><li><i class="k kb"></i>Pushbox</li></ul>
+<div class="fdctl">
+<button type="button" class="fdbtn" id="fd-play">Pause</button>
+<button type="button" class="fdbtn" id="fd-prev">Step back</button>
+<button type="button" class="fdbtn" id="fd-next">Step forward</button>
+<button type="button" class="fdbtn" id="fd-hb" aria-pressed="true">Hitboxes on</button>
+<div class="seg" role="group" aria-label="Move"><button type="button" class="fdbtn" data-move="jab" aria-pressed="true">Jab</button><button type="button" class="fdbtn" data-move="heavy" aria-pressed="false">Heavy</button></div>
+</div>
+<div class="fdscrub"><label for="fd-scrub">Frame <span id="fd-frame">1 / 1</span></label><input type="range" id="fd-scrub" min="0" max="0" value="0"></div>
+<ol class="framebar" id="fd-bar" aria-hidden="true"></ol>
+<dl class="fdata" id="fd-data">
+<div class="d"><dt>Damage</dt><dd id="d-dmg"></dd></div>
+<div class="d st"><dt>Startup</dt><dd id="d-st"></dd></div>
+<div class="d ac"><dt>Active</dt><dd id="d-ac"></dd></div>
+<div class="d re"><dt>Recovery</dt><dd id="d-re"></dd></div>
+<div class="d"><dt>On block</dt><dd id="d-ob"></dd></div>
+<div class="d"><dt>On hit</dt><dd id="d-oh"></dd></div>
+</dl>
+<p class="cap">Startup is the telegraph. Recovery is the punish window. Playback is slowed down, and the numbers are illustrative, not from a shipped game.</p>
 </figure>
 </div></section>
 
@@ -218,6 +234,25 @@ def index():
 <ul class="rlist">{rh}</ul>
 <h3>Earlier work</h3>
 <ul class="table"><li class="thead" aria-hidden="true"><span></span><span>Project</span><span>Role</span><span>What I did</span></li>{oh}</ul>
+</section>
+
+<section class="wrap how" id="how">
+<h2>How I work</h2>
+<ol class="steps">
+<li class="step"><h3 class="c-blue">Reference</h3><p>I\u2019ve played over 1,300 games and keep a library of combat references. When a problem comes up, I already know what\u2019s been tried and what\u2019s worth borrowing.</p></li>
+<li class="step"><h3 class="c-yellow">Translate</h3><p>I boil that research down for animators, engineers, producers and artists, in terms each of them can use, so the whole team works from the same picture.</p></li>
+<li class="step"><h3 class="c-red">Build</h3><p>I implement and iterate on it myself, owning the enemy systems end to end and building them from the ground up, from prototype to ship.</p></li>
+</ol>
+</section>
+
+<section class="wrap lib" id="library">
+<h2>Reference library</h2>
+<p class="lede">The research behind the work, kept in public.</p>
+<ul class="liblist">
+<li><a class="libcard" href="{EDB}" rel="noopener"><span class="rtab c-blue">Database</span><span class="rtitle">Enemy Design Database</span><span class="rblurb">A searchable catalog of enemy designs, mainly from action-adventure games: enemy type, size, weapons, actions, reactions and video references. I built it and maintain it.</span></a></li>
+<li><a class="libcard" href="https://www.youtube.com/@tringuyen-combatdesign" rel="noopener"><span class="rtab c-yellow">Video</span><span class="rtitle">Combat animation references</span><span class="rblurb">A YouTube reference library of combat animation, organized for combat design.</span></a></li>
+<li><a class="libcard" href="https://trigrows.medium.com/solving-the-combat-puzzle-of-clawface-661e887d40c0" rel="noopener"><span class="rtab c-red">Write-up</span><span class="rtitle">Solving the combat puzzle of Clawface</span><span class="rblurb">How the weapons, enemies and levels of Clawface came together, and what small tuning changes did to the player experience.</span></a></li>
+</ul>
 </section>
 </main>
 """ + foot(0)
