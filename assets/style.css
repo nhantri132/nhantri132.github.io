@@ -226,3 +226,29 @@ nav a:hover{background:var(--yellow)}
 
 .about h1.hnote{display:inline-block}.about h1 .n-old{top:60%;transform:translateY(-40%) rotate(-2deg)}
 .hnote .note{letter-spacing:0;font-weight:700;font-size:1.4rem;line-height:1}
+
+/* stuff I like */
+.stufflead{margin:0 0 1.25rem;font-size:1.15rem;max-width:42rem}
+.stufflead strong{font-family:var(--display);font-weight:800}
+.stufflist{list-style:none;margin:0;padding:0;background:var(--white);border:var(--bw) solid var(--ink)}
+.stufflist li+li{border-top:1px solid var(--rule)}
+.srow{all:unset;box-sizing:border-box;display:grid;grid-template-columns:11rem minmax(0,1fr);gap:.4rem 1.5rem;align-items:center;width:100%;padding:1.1rem 1.25rem;cursor:default;--h:transparent}
+.stuff.js .srow{cursor:pointer}
+.stuff.js .srow:hover{background:var(--tint)}
+.srow:focus-visible{outline:3px solid var(--blue);outline-offset:-3px}
+.snum{display:flex;flex-direction:column;line-height:1.1}
+.snum strong{font-family:var(--display);font-weight:800;font-size:2rem;letter-spacing:-.02em}
+.snum span{font-size:1rem;color:var(--ink2)}
+.ssq{display:flex;flex-wrap:wrap;gap:4px}
+.ssq i{width:14px;height:14px;background:var(--blue)}
+.srow.c-yellow .ssq i{background:var(--yellow)}
+.srow.c-red .ssq i{background:var(--red)}
+.srow.c-blue .ssq i{background:var(--blue)}
+.srow{background-color:transparent;color:var(--ink)}
+.srow.c-blue,.srow.c-yellow,.srow.c-red{background-color:transparent;color:var(--ink)}
+.sdetail{grid-column:2;font-size:1.05rem;line-height:1.5;color:var(--ink2)}
+.stuff.js .sdetail{display:none}
+.stuff.js .srow[aria-expanded="true"] .sdetail{display:block}
+.stuff.js .srow[aria-expanded="true"]{background:var(--tint)}
+.stuff h2.hnote{display:inline-block}
+@media (max-width:600px){.srow{grid-template-columns:minmax(0,1fr)}.sdetail{grid-column:1}}

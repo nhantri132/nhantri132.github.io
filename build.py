@@ -127,6 +127,19 @@ SERVICES = [
  ("Career and portfolio mentorship", "Mentoring at Gameheads, EAE, Gamecraft, Electronic Arts interns, and Coog Interactive."),
 ]
 
+
+# "Stuff I like": counts only, never ratings. 1 square = 50 items.
+# Counts below come from the Goodreads, Letterboxd and RYM exports (Oct 2026). Games is Tri's own figure.
+# TO ADD: TV (count + detail). Update TOTAL_NOTE when it lands.
+STUFF = [
+ dict(n=1300, big="1,300+", unit="games", color="blue", detail="Played, tracked and remembered one by one. This is where most of my combat references come from."),
+ dict(n=692, big="690+", unit="books and comics", color="yellow", detail="About 140,000 pages from 270+ authors."),
+ dict(n=1494, big="1,490+", unit="films", color="red", detail="Releases from 1902 to 2026, with the most from the 2010s."),
+ dict(n=3624, big="3,600+", unit="albums", color="blue", detail="From 1,800+ artists, with releases from 1952 to 2026."),
+]
+STUFF_TOTAL = "7,000+"
+STUFF_SQ = 50
+
 def e(s): return html.escape(s, quote=True)
 
 COLORS = {"giant-skull":"blue","marvels-wolverine":"yellow","star-wars-jedi-survivor":"red","clawface":"blue","wwe-undefeated":"red"}
@@ -265,6 +278,17 @@ def project_page(pr, i):
 </main>
 """ + foot(1)
 
+
+def stuff_html():
+    out = []
+    for k, it in enumerate(STUFF):
+        sq = "".join("<i></i>" for _ in range(round(it["n"] / STUFF_SQ)))
+        out.append(f"""<li><button type="button" class="srow c-{it['color']}" aria-expanded="{'true' if k == 0 else 'false'}">
+<span class="snum"><strong>{e(it['big'])}</strong><span>{e(it['unit'])}</span></span>
+<span class="ssq" aria-hidden="true">{sq}</span>
+<span class="sdetail">{e(it['detail'])}</span></button></li>""")
+    return "".join(out)
+
 def about():
     sv = "".join(f"<li><span class=\"pip c-{CYCLE[k % 3]}\" aria-hidden=\"true\"></span><strong>{e(a)}</strong><span>{e(b)}</span></li>" for k, (a, b) in enumerate(ABOUT_SV()))
     mail = f'<li><a href="mailto:{e(EMAIL)}">{e(EMAIL)}</a></li>' if EMAIL else ""
@@ -275,6 +299,12 @@ def about():
 <div class="photo"><img src="assets/tri.jpg" alt="{NAME} throwing a kick at the camera, in glasses and a pink shirt" width="720" height="1104" onerror="this.parentNode.hidden=true;this.closest('.aboutgrid').classList.add('nophoto')"></div>
 <div class="bio">{''.join(f'<p>{e(t)}</p>' for t in ABOUT)}</div>
 </div>
+
+<section id="stuff" class="stuff">
+<h2 class="hnote">Stuff I like<span class="note n-old" aria-hidden="true"><svg viewBox="0 0 60 50" width="60" height="50"><path d="M56 10 C 40 6, 22 14, 8 30" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M8 18 L7 31 L20 33" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>yes, I log everything</span></h2>
+<p class="stufflead"><strong>{STUFF_TOTAL}</strong> games, books, films and albums, and counting. Each square is {STUFF_SQ} of them. Tap a row for more.</p>
+<ul class="stufflist">{stuff_html()}</ul>
+</section>
 
 <section id="how">
 <h2>How I work</h2>

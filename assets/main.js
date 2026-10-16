@@ -177,3 +177,16 @@ document.querySelectorAll('.video[data-yt]').forEach(function (box) {
   if (reduce) { frame = MOVES.jab.st; draw(); }
   requestAnimationFrame(loop);
 })();
+
+/* Stuff I like: one open row at a time */
+(function () {
+  var box = document.querySelector('.stuff');
+  if (!box) return;
+  var rows = box.querySelectorAll('.srow');
+  box.classList.add('js');
+  rows.forEach(function (r) {
+    r.addEventListener('click', function () {
+      rows.forEach(function (o) { o.setAttribute('aria-expanded', o === r ? 'true' : 'false'); });
+    });
+  });
+})();
