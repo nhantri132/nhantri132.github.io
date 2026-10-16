@@ -140,6 +140,9 @@ STUFF = [
 STUFF_TOTAL = "7,000+"
 STUFF_SQ = 50
 
+import hashlib, pathlib
+ASSET_V = hashlib.md5(b"".join(pathlib.Path(__file__).parent.joinpath("assets", f).read_bytes() for f in ("style.css", "main.js"))).hexdigest()[:8]  # cache-busting for CSS/JS links
+
 def e(s): return html.escape(s, quote=True)
 
 COLORS = {"giant-skull":"blue","marvels-wolverine":"yellow","star-wars-jedi-survivor":"red","clawface":"blue","wwe-undefeated":"red"}
@@ -163,7 +166,7 @@ def head(title, desc, depth, path):
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Caveat:wght@700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
 <link rel="icon" href="{p}assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="{p}assets/style.css">
+<link rel="stylesheet" href="{p}assets/style.css?v={ASSET_V}">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -180,7 +183,7 @@ def foot(depth):
 <p>{NAME}, gameplay designer.</p>
 <p class="links">{mail}<a href="{LINKEDIN}" rel="noopener">LinkedIn</a><a href="{EDB}" rel="noopener">Enemy Design Database</a></p>
 </div></footer>
-<script src="{p}assets/main.js" defer></script>
+<script src="{p}assets/main.js?v={ASSET_V}" defer></script>
 </body></html>
 """
 
