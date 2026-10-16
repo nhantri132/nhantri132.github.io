@@ -131,7 +131,7 @@ SERVICES = [
 # "Stuff I like": counts only, never ratings. 1 square = 50 items.
 # Counts below come from the Goodreads, Letterboxd and RYM exports (Oct 2026). Games is from Backloggd stats screenshots (1,390 played).
 STUFF = [
- dict(n=1390, big="1,390+", unit="games", color="blue", detail=["Finished 1,200+ of them, across 11 platforms. Mostly adventure, shooter, indie and RPG.", "Favorite: Disco Elysium"]),
+ dict(n=1390, big="1,390+", unit="games", color="blue", detail=["Across 11 platforms. Mostly adventure, shooter, indie and RPG.", "Favorite: Disco Elysium"]),
  dict(n=692, big="690+", unit="books and comics", color="yellow", detail=["About 140,000 pages from 270+ authors.", "Recent favorite: House of X / Powers of X"]),
  dict(n=1494, big="1,490+", unit="films", color="red", detail=["Releases from 1902 to 2026, with the most from the 2010s.", "Favorite: Everything, Everywhere, All at Once"]),
  dict(n=3624, big="3,600+", unit="albums", color="blue", detail=["From 1,800+ artists, with releases from 1952 to 2026.", "Favorite: Kendrick Lamar\u2019s To Pimp a Butterfly"]),
