@@ -130,12 +130,12 @@ SERVICES = [
 
 # "Stuff I like": counts only, never ratings. 1 square = 50 items.
 # Counts below come from the Goodreads, Letterboxd and RYM exports (Oct 2026). Games is Tri's own figure.
-# TO ADD: TV (count + detail). Update TOTAL_NOTE when it lands.
 STUFF = [
  dict(n=1300, big="1,300+", unit="games", color="blue", detail="Played, tracked and remembered one by one. This is where most of my combat references come from."),
  dict(n=692, big="690+", unit="books and comics", color="yellow", detail="About 140,000 pages from 270+ authors."),
  dict(n=1494, big="1,490+", unit="films", color="red", detail="Releases from 1902 to 2026, with the most from the 2010s."),
  dict(n=3624, big="3,600+", unit="albums", color="blue", detail="From 1,800+ artists, with releases from 1952 to 2026."),
+ dict(n=187, big="185+", unit="TV seasons", color="yellow", detail="Logged season by season."),
 ]
 STUFF_TOTAL = "7,000+"
 STUFF_SQ = 50
@@ -302,7 +302,7 @@ def about():
 
 <section id="stuff" class="stuff">
 <h2 class="hnote">Stuff I like<span class="note n-old" aria-hidden="true"><svg viewBox="0 0 60 50" width="60" height="50"><path d="M56 10 C 40 6, 22 14, 8 30" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M8 18 L7 31 L20 33" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>yes, I log everything</span></h2>
-<p class="stufflead"><strong>{STUFF_TOTAL}</strong> games, books, films and albums, and counting. Each square is {STUFF_SQ} of them. Tap a row for more.</p>
+<p class="stufflead"><strong>{STUFF_TOTAL}</strong> games, books, films, albums and TV seasons, and counting. Each square is {STUFF_SQ} of them. Tap a row for more.</p>
 <ul class="stufflist">{stuff_html()}</ul>
 </section>
 
