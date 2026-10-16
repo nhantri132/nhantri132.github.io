@@ -252,3 +252,4 @@ nav a:hover{background:var(--yellow)}
 .stuff.js .srow[aria-expanded="true"]{background:var(--tint)}
 .stuff h2.hnote{display:inline-block}
 @media (max-width:600px){.srow{grid-template-columns:minmax(0,1fr)}.sdetail{grid-column:1}}
+.sdetail span{display:block}.sdetail span+span{margin-top:.2rem}
