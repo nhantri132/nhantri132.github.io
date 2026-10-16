@@ -119,7 +119,7 @@ PROJECTS = [
 
 ABOUT = [
  "I\u2019m a gameplay designer with almost a decade of design experience across a wide range of titles. I specialize in combat design, particularly enemy AI design. My goal is to create enemies that make the world feel real, encourage the use of the entire hero kit, and challenge the player in a viscerally entertaining way.",
- "I love video games for the way players get lost in worlds and are encouraged to interact with the systems, mechanics, story, and themes in a way that\u2019s richer than any other art form out there. Just some of the games that have captured my heart and imagination are Disco Elysium, Big Walk, Elden Ring, Soma, Rock Band, Outer Wilds, Nioh 2, Doom Eternal, and XCOM 2.",
+ "I love video games for the way players get lost in worlds and are encouraged to interact with the systems, mechanics, story, and themes in a way that\u2019s richer than any other art form out there.",
 ]
 SERVICES = [
  ("Talks on preparing for the industry", "What studios look for and how to get ready. Talks at University of Utah, University of North Texas, University of Houston, and NYU."),
@@ -129,13 +129,13 @@ SERVICES = [
 
 
 # "Stuff I like": counts only, never ratings. 1 square = 50 items.
-# Counts below come from the Goodreads, Letterboxd and RYM exports (Oct 2026). Games is Tri's own figure.
+# Counts below come from the Goodreads, Letterboxd and RYM exports (Oct 2026). Games is from Backloggd stats screenshots (1,390 played).
 STUFF = [
- dict(n=1300, big="1,300+", unit="games", color="blue", detail="Played, tracked and remembered one by one. This is where most of my combat references come from."),
- dict(n=692, big="690+", unit="books and comics", color="yellow", detail="About 140,000 pages from 270+ authors."),
- dict(n=1494, big="1,490+", unit="films", color="red", detail="Releases from 1902 to 2026, with the most from the 2010s."),
- dict(n=3624, big="3,600+", unit="albums", color="blue", detail="From 1,800+ artists, with releases from 1952 to 2026."),
- dict(n=187, big="185+", unit="TV seasons", color="yellow", detail="Logged season by season."),
+ dict(n=1390, big="1,390+", unit="games", color="blue", detail=["Finished 1,200+ of them, across 11 platforms. Mostly adventure, shooter, indie and RPG.", "Favorite: Disco Elysium"]),
+ dict(n=692, big="690+", unit="books and comics", color="yellow", detail=["About 140,000 pages from 270+ authors.", "Recent favorite: House of X / Powers of X"]),
+ dict(n=1494, big="1,490+", unit="films", color="red", detail=["Releases from 1902 to 2026, with the most from the 2010s.", "Favorite: Everything, Everywhere, All at Once"]),
+ dict(n=3624, big="3,600+", unit="albums", color="blue", detail=["From 1,800+ artists, with releases from 1952 to 2026.", "Favorite: Kendrick Lamar\u2019s To Pimp a Butterfly"]),
+ dict(n=187, big="185+", unit="TV seasons", color="yellow", detail=["Longest runs: Game of Thrones (8 seasons), Parks and Recreation (7), Rick and Morty (6) and BoJack Horseman (5). A lot of anime, animation, sitcoms and Marvel series in between.", "Favorite: How To with John Wilson"]),
 ]
 STUFF_TOTAL = "7,000+"
 STUFF_SQ = 50
@@ -289,7 +289,7 @@ def stuff_html():
         out.append(f"""<li><button type="button" class="srow c-{it['color']}" aria-expanded="{'true' if k == 0 else 'false'}">
 <span class="snum"><strong>{e(it['big'])}</strong><span>{e(it['unit'])}</span></span>
 <span class="ssq" aria-hidden="true">{sq}</span>
-<span class="sdetail">{e(it['detail'])}</span></button></li>""")
+<span class="sdetail">{"".join(f"<span>{e(d)}</span>" for d in it['detail'])}</span></button></li>""")
     return "".join(out)
 
 def about():
@@ -312,7 +312,7 @@ def about():
 <section id="how">
 <h2>How I work</h2>
 <ol class="steps">
-<li class="step s-blue"><h3>Reference</h3><p>I\u2019ve played over 1,300 games, keep a library of references, and am inspired by the best.</p></li>
+<li class="step s-blue"><h3>Reference</h3><p>I keep a manually updated library of references and am inspired by the best.</p></li>
 <li class="step s-yellow"><h3>Translate</h3><p>I communicate the ideas to all disciplines so the team and I can build in the same direction.</p></li>
 <li class="step s-red"><h3>Build</h3><p>I own the enemy systems end to end and build them from the ground up, from prototype to ship.</p></li>
 </ol>
