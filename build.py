@@ -209,7 +209,7 @@ def index():
 <main id="main">
 <section class="hero"><div class="wrap herogrid">
 <div class="herotext">
-<h1>Combat design with personality and depth</h1>
+<h1>Game design with personality and depth</h1>
 <p class="brandline">Gameplay designer with almost a decade across combat and enemy AI. Every solution comes with a reference, from prototype to ship.</p>
 <p class="cta"><a class="btn" href="#work">See the work</a><a class="btn ghost" href="about.html">About me</a></p>
 </div>
