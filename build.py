@@ -303,12 +303,6 @@ def about():
 <div class="bio">{''.join(f'<p>{e(t)}</p>' for t in ABOUT)}</div>
 </div>
 
-<section id="stuff" class="stuff">
-<h2 class="hnote">Stuff I like<span class="note n-old" aria-hidden="true"><svg viewBox="0 0 60 50" width="60" height="50"><path d="M56 10 C 40 6, 22 14, 8 30" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M8 18 L7 31 L20 33" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>yes, I log everything</span></h2>
-<p class="stufflead"><strong>{STUFF_TOTAL}</strong> games, books, films, albums and TV seasons, and counting. Each square is {STUFF_SQ} of them. Tap a row for more.</p>
-<ul class="stufflist">{stuff_html()}</ul>
-</section>
-
 <section id="how">
 <h2>How I work</h2>
 <ol class="steps">
@@ -316,6 +310,12 @@ def about():
 <li class="step s-yellow"><h3>Translate</h3><p>I communicate the ideas to all disciplines so the team and I can build in the same direction.</p></li>
 <li class="step s-red"><h3>Build</h3><p>I own the enemy systems end to end and build them from the ground up, from prototype to ship.</p></li>
 </ol>
+</section>
+
+<section id="stuff" class="stuff">
+<h2 class="hnote">Stuff I like<span class="note n-old" aria-hidden="true"><svg viewBox="0 0 60 50" width="60" height="50"><path d="M56 10 C 40 6, 22 14, 8 30" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M8 18 L7 31 L20 33" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>yes, I log everything</span></h2>
+<p class="stufflead"><strong>{STUFF_TOTAL}</strong> games, books, films, albums and TV seasons, and counting. Each square is {STUFF_SQ} of them. Tap a row for more.</p>
+<ul class="stufflist">{stuff_html()}</ul>
 </section>
 
 <section id="library">
